@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Calculator</title>
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/4b0a44444a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Fredoka+One&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <h1 id="logo">Sleep Calculator <i class="fas fa-bed"></i></h1>
+      </header>
+
+      <h2>What time do you have to wake up?</h2>
+      <div class="inputwrapper">
+        <input
+          v-model="clockInput"
+          type="time"
+          id="time"
+          onchange="ampm(this.value)"
+        />
+        <button>CHECK</button>
+      </div>
+
+      <div class="container" v-if="clockInput != '' ">
+        <p>
+          The average human takes 15 minutes to fall asleep. To wake up
+          refreshed at 6:30 AM, you need go to sleep at one of the following
+          times:
+        </p>
+        <div>
+          <div class="suggested">
+            <span id="display_time"> </span>
+            <span id="display_time_two"></span>
+          </div>
+          <div class="spans">
+            <span id="display_time_three"></span>
+            <span id="display_time_four"></span>
+            <span id="display_time_five"></span>
+            <span id="display_time_six"></span>
+          </div>
+        </div>
+      </div>
+      <p></p>
+    </main>
+  </body>
+</html>
