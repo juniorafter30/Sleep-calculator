@@ -22,7 +22,7 @@
   <body>
     <main>
       <header>
-        <h1 id="logo">Sleep Calculator <i class="fas fa-bed"></i></h1>
+        <h1 id="logo">Sleep Calculator <a href="index.html"><i class="fas fa-bed"></i></h1></a>
       </header>
 
       <h2>What time do you have to wake up?</h2>
@@ -33,12 +33,12 @@
           id="time"
           onchange="ampm(this.value)"
         />
-        <button>CHECK</button>
+        <button @click="isActive">Calculate</button>
       </div>
 
-      <div class="container" v-if="clockInput != '' ">
+      <div class="container" :class="classChanger">
         <p>
-          The average human takes 15 minutes to fall asleep. To wake up
+          The average human takes 15 minutes to fall asleep. <br />To wake up
           refreshed at 6:30 AM, you need go to sleep at one of the following
           times:
         </p>
@@ -53,9 +53,9 @@
             <span id="display_time_five"></span>
             <span id="display_time_six"></span>
           </div>
+          <button class="bottombutton" @click="isActive">Try again</button>
         </div>
       </div>
-      <p></p>
     </main>
   </body>
 </html>

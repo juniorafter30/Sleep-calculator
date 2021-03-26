@@ -30,12 +30,24 @@ const app = Vue.createApp({
     return {
       clockInput: "",
       clockSpan: "",
+      hidden: true,
     };
+  },
+  computed: {
+    classChanger() {
+      return {
+        hidden: this.hidden,
+        hidden: !this.hidden,
+      };
+    },
   },
   methods: {
     timeCatch(e) {
       this.clockInput = e.target.value;
       console.log(this.clockInput);
+    },
+    isActive() {
+      this.hidden = !this.hidden;
     },
   },
 });

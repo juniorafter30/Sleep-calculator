@@ -99,6 +99,10 @@ input::-webkit-datetime-edit-hour-field {
           flex-direction: column;
   max-width: 600px;
   margin: 30px;
+  text-align: center;
+  display: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .container p {
@@ -147,7 +151,7 @@ input::-webkit-datetime-edit-hour-field {
           justify-content: center;
 }
 
-.inputwrapper button {
+button {
   background: transparent;
   padding: 10px 20px;
   border: 1px solid white;
@@ -161,8 +165,18 @@ input::-webkit-datetime-edit-hour-field {
           box-shadow: 0 8px 6px -6px white;
 }
 
-.inputwrapper button:hover {
+button:hover {
   background: white;
   color: #2d47da;
+}
+
+.hidden {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bottombutton {
+  margin-top: 20px;
 }
 /*# sourceMappingURL=style.css.map */

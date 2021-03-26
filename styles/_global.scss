@@ -75,10 +75,13 @@ input::-webkit-datetime-edit-hour-field {
   flex-direction: column;
   max-width: 600px;
   margin: 30px;
+  text-align: center;
+  display: none;
+  transition: all 0.3s ease;
+
   p {
     padding: 20px;
   }
-
   span {
     background: rgb(54, 103, 148);
     padding: 10px 20px;
@@ -110,20 +113,26 @@ input::-webkit-datetime-edit-hour-field {
   justify-content: center;
 }
 
-.inputwrapper {
-  button {
-    background: transparent;
-    padding: 10px 20px;
-    border: 1px solid white;
-    color: white;
-    font-family: "Fredoka One", cursive;
-    cursor: pointer;
-    border-radius: 15px;
-    transition: all 0.5s ease;
-    box-shadow: 0 8px 6px -6px rgb(255, 255, 255);
-  }
-  button:hover {
-    background: white;
-    color: rgb(45, 71, 218);
-  }
+button {
+  background: transparent;
+  padding: 10px 20px;
+  border: 1px solid white;
+  color: white;
+  font-family: "Fredoka One", cursive;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+  box-shadow: 0 8px 6px -6px rgb(255, 255, 255);
+}
+button:hover {
+  background: white;
+  color: rgb(45, 71, 218);
+}
+
+.hidden {
+  display: flex;
+}
+
+.bottombutton {
+  margin-top: 20px;
 }
