@@ -23,8 +23,14 @@ function ampm(time) {
     h = h % 12 || 12;
     console.log(`${h}:${m}`);
 
+    var x = displayTime2;
+    var tempTime = moment.duration(x);
+    var y = tempTime.hours() + tempTime.minutes();
+
+    console.log(y);
+
     let displayTime = `${h}:${m}` + " " + suffix + "  suggested";
-    let displayTimeTwo = `${h - 7}:${m - 45}` + " " + suffix + "  suggested";
+    let displayTimeTwo = `${h}:${m}` + " " + suffix + "  suggested";
     const displayTimeThree = `${h}:${m}` + " " + suffix;
     const displayTimeFour = `${h}:${m}` + " " + suffix;
     const displayTimeFive = `${h}:${m}` + " " + suffix;
