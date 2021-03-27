@@ -37,6 +37,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
   padding: 20px;
   min-height: 100vh;
   max-width: 1000px;
@@ -60,7 +61,7 @@ main h2 {
   color: #366794;
 }
 
-input {
+#time {
   margin: 2rem;
   padding: 1rem;
   font-size: 20px;
@@ -73,13 +74,13 @@ input {
           box-shadow: 0 8px 6px -6px #e2dddd;
 }
 
-input::-webkit-calendar-picker-indicator {
+#time::-webkit-calendar-picker-indicator {
   -webkit-filter: invert(100%) sepia(5%) saturate(3500%) hue-rotate(130deg) brightness(95%) contrast(80%);
           filter: invert(100%) sepia(5%) saturate(3500%) hue-rotate(130deg) brightness(95%) contrast(80%);
   cursor: pointer;
 }
 
-input::-webkit-datetime-edit-hour-field {
+#time::-webkit-datetime-edit-hour-field {
   background: transparent;
 }
 

@@ -20,13 +20,16 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Chango&family=Lobster&family=Train+One&display=swap" rel="stylesheet">
+
+<script src="/dist/picker.js" defer></script>
+<link  href="/dist/picker.css" rel="stylesheet">
   </head>
 
   <body>
     <main>
-      <header>
+    
         <h1 id="logo">Sleep Calculator <a href="index.html"><i class="fas fa-bed"></i></h1></a>
-      </header>
+     
 
       <h2>What time do you have to wake up?</h2>
       <div class="inputwrapper">
@@ -40,6 +43,7 @@
       </div>
 
       <div class="container" :class="classChanger">
+        
         <p>
           The average human takes 15 minutes to fall asleep. <br />To wake up
           refreshed at {{clockInput}}, you need go to sleep at one of the following
@@ -56,9 +60,13 @@
             <span id="display_time_five"></span>
             <span id="display_time_six"></span>
           </div>
+         <p> If you wake up at one of these times, you’ll rise in between 90-minute sleep cycles. A good night’s sleep consists of 5-6 complete sleep cycles.</p>
+
           <button class="bottombutton" @click="isActive">Try again</button>
         </div>
       </div>
+    
     </main>
+    
   </body>
 </html>
