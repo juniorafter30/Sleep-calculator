@@ -4,16 +4,26 @@ function ampm(time) {
   if (time.value !== "") {
     let hours = time.split(":")[0];
     let minutes = time.split(":")[1];
-    let suffix = hours >= 12 ? "pm" : "am";
-    hours = hours % 12 || 12;
-    hours = hours < 10 ? "0" + hours : hours;
+    let $milisecondsValue = hours * 60000 * 60 + minutes * 60100;
+    console.log($milisecondsValue);
 
-    let displayTime = hours + ":" + minutes + " " + suffix + "  suggested";
-    let displayTimeTwo = hours + ":" + minutes + " " + suffix + "  suggested";
-    const displayTimeThree = hours + ":" + minutes + " " + suffix;
-    const displayTimeFour = hours + ":" + minutes + " " + suffix;
-    const displayTimeFive = hours + ":" + minutes + " " + suffix;
-    const displayTimeSix = hours + ":" + minutes + " " + suffix;
+    let timeInMiliseconds = $milisecondsValue;
+    let h, m, s;
+    h = Math.floor(timeInMiliseconds / 1000 / 60 / 60);
+    m = Math.floor((timeInMiliseconds / 1000 / 60 / 60 - h) * 60);
+
+    m < 10 ? (m = `0${m}`) : (m = `${m}`);
+    h < 10 ? (h = `0${h}`) : (h = `${h}`);
+    let suffix = h >= 12 ? "pm" : "am";
+    h = h % 12 || 12;
+    console.log(`${h}:${m}`);
+
+    let displayTime = `${h}:${m}` + " " + suffix + "  suggested";
+    let displayTimeTwo = `${h}:${m}` + " " + suffix + "  suggested";
+    const displayTimeThree = `${h}:${m}` + " " + suffix;
+    const displayTimeFour = `${h}:${m}` + " " + suffix;
+    const displayTimeFive = `${h}:${m}` + " " + suffix;
+    const displayTimeSix = `${h}:${m}` + " " + suffix;
 
     document.getElementById("display_time").innerHTML = displayTime;
     document.getElementById("display_time_two").innerHTML = displayTimeTwo;
@@ -47,6 +57,7 @@ const app = Vue.createApp({
     },
     isActive() {
       this.hidden = !this.hidden;
+      this.clockInput.value = "";
     },
   },
 });
